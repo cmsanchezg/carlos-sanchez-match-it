@@ -1,0 +1,10 @@
+@use './styles/partials/fonts' as *;
+@use './styles/partials/variables' as *;
+@use './styles/partials/mixins' as *;
+
+* {
+    box-sizing: border-box;
+    font-family: 'Arial';
+    padding: 0px;
+    margin: 0px;
+  }
