@@ -1,5 +1,5 @@
-import '../GamePage/GamePage.scss';
-import ImageCard from '../../components/ImageCard/ImageCard';
+import './GamePage.scss';
+import ImageCard from '../ImageCard/ImageCard';
 
 
 function shuffleArray(images) {

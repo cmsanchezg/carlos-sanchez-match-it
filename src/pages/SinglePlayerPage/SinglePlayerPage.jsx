@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { NavLink } from 'react-router-dom';
 import '../SinglePlayerPage/SinglePlayerPage.scss';
-import GamePage from '../GamePage/GamePage';
+import GamePage from '../../components/Game/Game';
 
 export const api = "http://localhost:0914";
 

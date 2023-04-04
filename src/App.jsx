@@ -6,7 +6,7 @@ import HomePage from './pages/HomePage/HomePage';
 import SelectMode from './pages/SelectMode/SelectMode';
 import SinglePlayerPage from "./pages/SinglePlayerPage/SinglePlayerPage";
 import TwoPlayerPage from "./pages/TwoPlayerPage/TwoPlayerPage";
-import GamePage from "./pages/GamePage/GamePage";
+import GamePage from "./components/Game/Game";
 
 function App() {
 
