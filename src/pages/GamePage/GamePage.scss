@@ -1,2 +1,14 @@
 @use '../../styles/partials/variables' as *;
 @use '../../styles/partials/mixins' as *;
+
+.game {
+    &__none {
+        display: none;
+    }
+
+    &__images {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+}

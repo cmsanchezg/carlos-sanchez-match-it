@@ -1,0 +1,11 @@
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+
+.image__card {
+    list-style: none;
+    width: 25%;
+    &__image {
+        width: 100px;
+        height: 100px;
+    }
+}
