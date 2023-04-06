@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { NavLink } from 'react-router-dom';
 import './StartBtn.scss';
-import GamePage from '../Game/Game';
+import Gameboard from '../Gameboard/Gameboard';
 
 export const api = "http://localhost:0914";
 
@@ -21,18 +21,20 @@ function StartBtn() {
 
 const [images, setImages] = useState([]);
 const [viewImages, setViewImages] = useState(false);
-
-const shuffledImages = shuffleImages(images);
+const [flipImages, setFlipImages] = useState(false);
 
 useEffect(() => {
   getImages();
+
 }, []);
 
 function getImages () {
   axios
   .get (`${api}/images`)
   .then((res) => {
-      setImages(res.data);
+    // console.log(res.data);
+    const shuffledImages = shuffleImages(res.data);
+      setImages(shuffledImages);
   })
   .catch((error) => {
       console.log("error", error);
@@ -51,8 +53,8 @@ const handleStartBtn = () => {
             <button images={images} onClick={handleStartBtn} >Start Game!</button>
         </NavLink>
 
-        {viewImages ? <GamePage images={images} /> : ""}
-
+        {viewImages ? <Gameboard images={images} setImages={setImages} /> : ""}
+  
     </section>
     </>
   );

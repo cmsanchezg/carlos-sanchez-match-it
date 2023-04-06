@@ -1,0 +1,18 @@
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+
+.gameboard {
+    
+    // &__back {
+    //     display: flex;
+    //     flex-wrap: wrap;
+    //     justify-content: center;
+    // }
+
+    &__images {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+}
