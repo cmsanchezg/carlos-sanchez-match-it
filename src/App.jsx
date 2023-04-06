@@ -4,7 +4,7 @@ import './App.scss';
 
 import HomePage from './pages/HomePage/HomePage';
 import SelectMode from './pages/SelectMode/SelectMode';
-import SinglePlayerPage from "./pages/SinglePlayerPage/SinglePlayerPage";
+import SinglePlayerPage from "./components/StartBtn/StartBtn";
 import TwoPlayerPage from "./pages/TwoPlayerPage/TwoPlayerPage";
 import GamePage from "./components/Game/Game";
 

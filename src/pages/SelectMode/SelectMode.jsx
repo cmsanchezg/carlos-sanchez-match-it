@@ -11,9 +11,9 @@ function SelectModePage() {
         <NavLink to="/singleplayermode" className='select__mode__single__player__mode__btn'>
             <button>Single Player</button>
         </NavLink>
-        <NavLink to="/twoplayermode" className='select__mode__two__player__mode__btn'>
+        {/* <NavLink to="/twoplayermode" className='select__mode__two__player__mode__btn'>
             <button>Two Player</button>
-        </NavLink>
+        </NavLink> */}
 
         <form action="">
             <label htmlFor="">Select Category</label>
