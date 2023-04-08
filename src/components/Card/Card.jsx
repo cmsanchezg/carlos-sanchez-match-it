@@ -3,7 +3,7 @@ import "./Card.scss";
 // import fifa from '../../assets/images/images/soccer_back_cover.jpg';
 
 function Card({
-  key,
+  // key,
   index,
   image,
   description,

@@ -4,39 +4,66 @@ import Scoreboard from "../Scoreboard/Scoreboard";
 import { useEffect, useRef, useState } from "react";
 
 function Gameboard({ images, setImages }) {
-  // const [click1, setClick1] = useState(0);
-  // const [click2, setClick2] = useState(0);
 
-  const handleImageClick = (id) => {
-    console.log(id);
+  const [openCards, setOpenCards] = useState([]);
+  const [clearedCards, setClearedCards] = useState({});
+  const [score, setScore] = useState(0);
+  const timeout = useRef(null);
 
-    console.log(images);
+  // const evaluate = () => {
+  //   const [first, second] = openCards;
+  //   if (cards[first].type === cards[second].type ) {
+  //     setClearedCards ((pev) => ({...prev,[cards[first].type] : true}));
+  //     setOpenCards([]);
+  //     return;
+  //   }
+  //   timeout.current = setTimeout(() => {
+  //     setOpenCards([]);
+  //   }, 500);
+  // };
+  
 
-    const foundImage = images.findIndex(image=> image.id === id);
-    images[foundImage].flipped =  !images[foundImage].flipped;
+ const handleImageClick = (id) => {
+  console.log(id);
 
-    const updatedImages = [...images ];
+  const foundImage = images.findIndex(image=> image.id === id);
+  images[foundImage].flipped =  !images[foundImage].flipped;
+  // console.log(images[foundImage].flipped);
 
-    setImages(updatedImages);
-    // if (click1 === 0) {
-    //   setClick1(id);
-    // } else {
-    //   setClick2(id);
-    // }
-    // console.log("click one:", setClick1)
-    // console.log("click two:", setClick2)
+  const updatedImages = [...images ];
 
-    // if (click1 !== 0 && click2 !== 0 && click1 === click2) {
-    //   return 'matched'; // do something to keep them flipped up
-    // } else {
-    //   setClick1(0);
-    //   setClick2(0);
-    // }
-  };
+  setImages(updatedImages);
+}
+
+
+  //   if (openCards.length === 1) {
+  //     console.log(images.length)
+  //     setOpenCards ((prev) => [...prev, index]);
+  //     setScore((score) => score + 1);
+  //   } else {
+  //     clearTimeout(timeout.current);
+  //     setOpenCards([index]);
+  //   }
+  // };  
+   
+  // useEffect (() => {
+  //   if (openCards === 2) {
+  //     setTimeout (evaluate, 500);
+  //   }
+  // }, [openCards])
+
+  // const checkIsFlipped = (index) => {
+  //   return openCards.includes(index);
+  // }
+
+  // const checkIsInactive = (card) => {
+  //   return Boolean(clearedCards[card.type]);
+  // } 
+  
 
   return (
     <article className="gameboard">
-      <Scoreboard />
+      <Scoreboard score={score}/>
 
       <section className="gameboard__images">
         {images.map((image, index) => {

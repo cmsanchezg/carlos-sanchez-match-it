@@ -32,7 +32,6 @@ function getImages () {
   axios
   .get (`${api}/images`)
   .then((res) => {
-    // console.log(res.data);
     const shuffledImages = shuffleImages(res.data);
       setImages(shuffledImages);
   })
