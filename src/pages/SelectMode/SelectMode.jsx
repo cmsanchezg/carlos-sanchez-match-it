@@ -11,14 +11,14 @@ function SelectModePage() {
         <NavLink to="/startbtn" className='select__mode__single__player__mode__btn'>
             <button>Single Player</button>
         </NavLink>
-        {/* <NavLink to="/twoplayermode" className='select__mode__two__player__mode__btn'>
+        {/* <NavLink to="/startbtn" className='select__mode__two__player__mode__btn'>
             <button>Two Player</button>
         </NavLink> */}
 
-        <form action="">
+        {/* <form action="">
             <label htmlFor="">Select Category</label>
             <input type="text" placeholder='Select Category' />
-        </form>
+        </form> */}
     </section>
     </>
   );

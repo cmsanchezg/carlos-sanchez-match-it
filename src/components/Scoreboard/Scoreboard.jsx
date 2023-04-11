@@ -1,12 +1,18 @@
 import './Scoreboard.scss';
 
-function Scoreboard({score}) {
+function Scoreboard({moves, pairs}) {
 
     return (
+        <section>
         <div className='scoreboard'>
-            <p className='scoreboard__player__one'>Player One: {score} </p>
-            {/* <p className='scoreboard__player__two'>Player Two: {score} </p> */}
+            <p className='scoreboard__player__one'>Player One Moves: {moves} </p>
+            <p className='scoreboard__player__two'>Player One Pairs: {pairs} </p>
         </div>
+        {/* <div className='scoreboard'>
+            <p className='scoreboard__player__one'>Player Two Moves: {moves} </p>
+            <p className='scoreboard__player__two'>Player Two Pairs: {pairs} </p>
+        </div> */}
+        </section>
     );
 }
 
