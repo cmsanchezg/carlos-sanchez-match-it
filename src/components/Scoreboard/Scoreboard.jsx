@@ -1,17 +1,23 @@
 import './Scoreboard.scss';
 
-function Scoreboard({moves, pairs}) {
+function Scoreboard({moves, playerOneName, playerOnePairs, playerTwoName, playerTwoPairs, turn}) {
 
     return (
-        <section>
-        <div className='scoreboard'>
-            <p className='scoreboard__player__one'>Player One Moves: {moves} </p>
-            <p className='scoreboard__player__two'>Player One Pairs: {pairs} </p>
+        <section className='scoreboard'>
+        <div className='scoreboard__player'>
+            <p className='scoreboard__player__one'>{playerOneName}</p>
+            <p className='scoreboard__player__one'>Pairs: {playerOnePairs} </p>
         </div>
-        {/* <div className='scoreboard'>
-            <p className='scoreboard__player__one'>Player Two Moves: {moves} </p>
-            <p className='scoreboard__player__two'>Player Two Pairs: {pairs} </p>
-        </div> */}
+        <div className='scoreboard__player'>
+            <p className='scoreboard__player__two'>{playerTwoName}</p>
+            <p className='scoreboard__player__two'>Pairs: {playerTwoPairs} </p>
+        </div>
+        <div>
+            <p className='scoreboard__moves'>Moves: {moves} </p>
+        </div>
+        <div>
+            <p className='scoreboard__turn'>Turn: {turn} </p>
+        </div>
         </section>
     );
 }

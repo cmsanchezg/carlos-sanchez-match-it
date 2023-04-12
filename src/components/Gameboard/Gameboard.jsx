@@ -3,7 +3,6 @@ import Card from "../Card/Card";
 import Scoreboard from "../Scoreboard/Scoreboard";
 import { useEffect, useRef, useState } from "react";
 import axios from "axios";
-import { NavLink } from "react-router-dom";
 
 export const api = "http://localhost:0914";
 
@@ -18,16 +17,20 @@ function shuffleCards(array) {
   return array;
 }
 
-function Gameboard() {
+function Gameboard({playerOneName, playerTwoName}) {
 
   const [cardsDetails, setCardsDetails] = useState([]); 
   const [openCards, setOpenCards] = useState([]);
   const [clearedCards, setClearedCards] = useState({});
   const [disableCards, setDisableCards] = useState(false);
   const [moves, setMoves] = useState(0);
-  const [pairs, setPairs] = useState(0);
+  const [playerOnePairs, setPlayerOnePairs] = useState(0);
+  const [playerTwoPairs, setPlayerTwoPairs] = useState(0);
   const timeout = useRef(null);
   const [cards, setCards] = useState([]);
+  const [currentPlayer, setCurrentPlayer] = useState(1);
+  const [turn, setTurn] = useState(`${playerOneName}'s turn`);
+
 
 useEffect(() => {
   getCards();
@@ -59,9 +62,14 @@ const enable = () => {
 const match = () => {
     const [first, second] = openCards;
     enable();
+
     if (cards[first].id === cards[second].id) {
       setClearedCards ((prev) => ({...prev, [cards[first].id] : true }));
-      setPairs((pairs) => pairs +1);
+      if (currentPlayer === 2) {
+        setPlayerOnePairs((playerOnePairs) => playerOnePairs +1);  
+      } else if (currentPlayer === 1) {
+        setPlayerTwoPairs((playerTwoPairs) => playerTwoPairs +1);
+      }
       setOpenCards([]);
       return;
     }
@@ -71,11 +79,20 @@ const match = () => {
   };
 
 const handleCardClick = (index) => {  
-    if (openCards.length === 1) {
+    if (openCards.length === 1 && currentPlayer === 2) {
       setOpenCards ((prev) => [...prev, index]);
       setMoves((moves) => moves + 1);
+      setTurn(`${playerOneName}'s turn`);
+      setCurrentPlayer(1);
       disable();
-    } else {
+    } else if (openCards.length === 1 && currentPlayer === 1) {
+      setOpenCards ((prev) => [...prev, index]);
+      setMoves((moves) => moves + 1);
+      setTurn(`${playerTwoName}'s turn`);
+      setCurrentPlayer(2);
+      disable();
+    } 
+    else {
       clearTimeout(timeout.current);
       setOpenCards([index]);
     }
@@ -100,19 +117,22 @@ const handleCardClick = (index) => {
   };
   
   const handleRestartBtn = () => {
-    getCards ();
-    setClearedCards ({});
-    // setOpenCards  ([]);
-    setMoves  (0);
-    setPairs (0);
-    // setDisableCards (false);
-    setCards (shuffleCards(cardsDetails.concat(cardsDetails)));
+    getCards();
+    setClearedCards({});
+    setOpenCards([]);
+    setMoves(0);
+    setPlayerOnePairs(0);
+    setPlayerTwoPairs(0);
+    setCurrentPlayer(1);
+    setDisableCards(false);
+    setCards(shuffleCards(cardsDetails.concat(cardsDetails)));
+    setTurn(`${playerOneName}'s turn`);
   };
   
   return (
     <section className="scoreboard">
       
-      <Scoreboard moves={moves} pairs={pairs}/>
+      <Scoreboard moves={moves} playerOneName={playerOneName} playerOnePairs={playerOnePairs} playerTwoName={playerTwoName} playerTwoPairs={playerTwoPairs} turn={turn}/>
 
       <div className="gameboard">
         {cards
@@ -131,10 +151,12 @@ const handleCardClick = (index) => {
         })}
         </div>
         <div>
-        <button onClick={handleRestartBtn} className='gameboard__restart__btn'>Restart</button>
+          <button onClick={handleRestartBtn} className='gameboard__restart__btn'>Restart</button>
         </div>
     </section>
   );
 }
 
 export default Gameboard;
+
+

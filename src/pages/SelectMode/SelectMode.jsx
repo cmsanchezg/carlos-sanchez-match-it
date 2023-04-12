@@ -8,7 +8,7 @@ function SelectModePage() {
     <section className='select__mode'>
       
         <p>Select Mode</p>
-        <NavLink to="/startbtn" className='select__mode__single__player__mode__btn'>
+        <NavLink to="/game" className='select__mode__single__player__mode__btn'>
             <button>Single Player</button>
         </NavLink>
         {/* <NavLink to="/startbtn" className='select__mode__two__player__mode__btn'>
