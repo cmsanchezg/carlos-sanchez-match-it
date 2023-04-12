@@ -1,6 +1,6 @@
-import './Scoreboard.scss';
+import './TwoPlayerScoreboard.scss';
 
-function Scoreboard({moves, playerOneName, playerOnePairs, playerTwoName, playerTwoPairs, turn}) {
+function TwoPlayerScoreboard({moves, playerOneName, playerOnePairs, playerTwoName, playerTwoPairs, turn}) {
 
     return (
         <section className='scoreboard'>
@@ -22,4 +22,4 @@ function Scoreboard({moves, playerOneName, playerOnePairs, playerTwoName, player
     );
 }
 
-export default Scoreboard;
+export default TwoPlayerScoreboard;

@@ -1,8 +1,9 @@
-import "./Gameboard.scss";
+import "./SinglePlayerGameboard.scss";
 import Card from "../Card/Card";
-import Scoreboard from "../Scoreboard/Scoreboard";
+import SinglePlayerScoreboard from "../SinglePlayerScoreboard/SinglePlayerScoreboard";
 import { useEffect, useRef, useState } from "react";
 import axios from "axios";
+import { NavLink } from "react-router-dom";
 
 export const api = "http://localhost:0914";
 
@@ -17,7 +18,7 @@ function shuffleCards(array) {
   return array;
 }
 
-function Gameboard({playerOneName, playerTwoName}) {
+function SinglePlayerGameboard({playerOneName}) {
 
   const [cardsDetails, setCardsDetails] = useState([]); 
   const [openCards, setOpenCards] = useState([]);
@@ -25,13 +26,12 @@ function Gameboard({playerOneName, playerTwoName}) {
   const [disableCards, setDisableCards] = useState(false);
   const [moves, setMoves] = useState(0);
   const [playerOnePairs, setPlayerOnePairs] = useState(0);
-  const [playerTwoPairs, setPlayerTwoPairs] = useState(0);
   const timeout = useRef(null);
   const [cards, setCards] = useState([]);
   const [currentPlayer, setCurrentPlayer] = useState(1);
-  const [turn, setTurn] = useState(`${playerOneName}'s turn`);
-
-
+  const [winner, setWinner] = useState("");
+  const [viewWinner, setViewWinner] = useState(false);
+  
 useEffect(() => {
   getCards();
 }, []);
@@ -65,12 +65,11 @@ const match = () => {
 
     if (cards[first].id === cards[second].id) {
       setClearedCards ((prev) => ({...prev, [cards[first].id] : true }));
-      if (currentPlayer === 2) {
+      if (currentPlayer === 1) {
         setPlayerOnePairs((playerOnePairs) => playerOnePairs +1);  
-      } else if (currentPlayer === 1) {
-        setPlayerTwoPairs((playerTwoPairs) => playerTwoPairs +1);
       }
-      setOpenCards([]);
+      setOpenCards([])
+      gameOver();
       return;
     }
     timeout.current = setTimeout(() => {
@@ -79,24 +78,24 @@ const match = () => {
   };
 
 const handleCardClick = (index) => {  
-    if (openCards.length === 1 && currentPlayer === 2) {
+    if (openCards.length === 1 && currentPlayer === 1) {
       setOpenCards ((prev) => [...prev, index]);
       setMoves((moves) => moves + 1);
-      setTurn(`${playerOneName}'s turn`);
       setCurrentPlayer(1);
       disable();
-    } else if (openCards.length === 1 && currentPlayer === 1) {
-      setOpenCards ((prev) => [...prev, index]);
-      setMoves((moves) => moves + 1);
-      setTurn(`${playerTwoName}'s turn`);
-      setCurrentPlayer(2);
-      disable();
-    } 
-    else {
+    } else {
       clearTimeout(timeout.current);
       setOpenCards([index]);
     }
   };
+
+const gameOver = () => {
+    if (playerOnePairs === 7) {
+      setWinner(`${playerOneName} wins`)
+      setViewWinner(true)
+    }
+};
+
 
   useEffect (() => {
     let timeout = null;
@@ -122,17 +121,16 @@ const handleCardClick = (index) => {
     setOpenCards([]);
     setMoves(0);
     setPlayerOnePairs(0);
-    setPlayerTwoPairs(0);
     setCurrentPlayer(1);
     setDisableCards(false);
     setCards(shuffleCards(cardsDetails.concat(cardsDetails)));
-    setTurn(`${playerOneName}'s turn`);
+    setWinner("");
   };
   
   return (
     <section className="scoreboard">
       
-      <Scoreboard moves={moves} playerOneName={playerOneName} playerOnePairs={playerOnePairs} playerTwoName={playerTwoName} playerTwoPairs={playerTwoPairs} turn={turn}/>
+      <SinglePlayerScoreboard moves={moves} playerOneName={playerOneName} playerOnePairs={playerOnePairs} />
 
       <div className="gameboard">
         {cards
@@ -153,10 +151,19 @@ const handleCardClick = (index) => {
         <div>
           <button onClick={handleRestartBtn} className='gameboard__restart__btn'>Restart</button>
         </div>
+        
+        {viewWinner ? 
+         <div>
+         <p>{winner}</p>
+         <button onClick={handleRestartBtn} className='gameboard__restart__btn'>Restart</button>
+         <NavLink to={"/"}>
+         <button className='gameboard__home__btn'>Home</button>
+         </NavLink>
+       </div>
+         : ""}
+
     </section>
   );
 }
 
-export default Gameboard;
-
-
+export default SinglePlayerGameboard;

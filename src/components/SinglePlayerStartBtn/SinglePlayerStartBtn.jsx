@@ -1,20 +1,15 @@
 import { useState } from 'react';
-import './StartBtn.scss';
-import Gameboard from '../Gameboard/Gameboard';
+import './SinglePlayerStartBtn.scss';
+import SinglePlayerGameboard from '../SinglePlayerGameboard/SinglePlayerGameboard';
 
-function StartBtn() {
+function SinglePlayerStartBtn() {
 
   const [viewCards, setViewCards] = useState(false);
   const [viewForm, setViewForm] = useState (true);
   const [playerOneName, setPlayerOneName] = useState("");
-  const [playerTwoName, setPlayerTwoName] = useState("");
   
   const handlePlayerOneName = (event) => {
     setPlayerOneName(event.target.value);
-  };
-
-  const handlePlayerTwoName = (event) => {
-    setPlayerTwoName(event.target.value);
   };
 
   const handleStartBtn = () => {
@@ -37,28 +32,17 @@ function StartBtn() {
               placeholder="Please Enter Your Name"
               onChange={handlePlayerOneName}/>
             
-            
-            
-            <label htmlFor="playerTwoName">Enter Player Two Name</label>
-            <input 
-              type="text" 
-              name="playerTwoName" 
-              id="playerTwoName" 
-              value={playerTwoName}
-              placeholder="Please Enter Your Name"
-              onChange={handlePlayerTwoName}/>
-            
             <div className='single__player__start__btn'>
               <button onClick={handleStartBtn}>Start Game!</button>
             </div>
         </div>
         : ""}
 
-        {viewCards ? <Gameboard playerOneName={playerOneName} playerTwoName={playerTwoName}/> : ""}
+        {viewCards ? <SinglePlayerGameboard playerOneName={playerOneName}/> : ""}
         
     </section>
     </>
   );
 }
 
-export default StartBtn;
+export default SinglePlayerStartBtn;

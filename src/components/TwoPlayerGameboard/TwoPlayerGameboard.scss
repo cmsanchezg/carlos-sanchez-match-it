@@ -1,0 +1,31 @@
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+
+.gameboard {
+    border: 1px solid gray;
+    padding: 12px;
+    box-shadow: 0px 0px 5px 2px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(3 1fr);
+    justify-items: center;
+    align-items: stretch;
+    gap: 1rem;
+    margin: 0 auto;
+    width: 500px;
+    height: 500px;
+    perspective: 100%;
+    max-width: 720px;
+    // &__back {
+    //     display: flex;
+    //     flex-wrap: wrap;
+    //     justify-content: center;
+    // }
+
+    // &__images {
+    //     display: flex;
+    //     flex-wrap: wrap;
+    //     justify-content: center;
+    // }
+    
+}

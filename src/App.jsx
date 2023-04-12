@@ -4,8 +4,8 @@ import './App.scss';
 
 import HomePage from './pages/HomePage/HomePage';
 import SelectMode from './pages/SelectMode/SelectMode';
-// import TwoPlayerPage from "./pages/TwoPlayerPage/TwoPlayerPage";
-import StartBtn from "./components/StartBtn/StartBtn";
+import SinglePlayerStartBtn from "./components/SinglePlayerStartBtn/SinglePlayerStartBtn";
+import TwoPlayerStartBtn from "./components/TwoPlayerStartBtn/TwoPlayerStartBtn";
 
 function App() {
 
@@ -14,8 +14,8 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/selectmode" element={<SelectMode />} />
-        <Route path="/game" element={<StartBtn />} />
-        {/* <Route path="/twoplayermode" element={<TwoPlayerPage />} /> */}
+        <Route path="/single_player_game" element={<SinglePlayerStartBtn />} />
+        <Route path="/two_player_game" element={<TwoPlayerStartBtn />} />
       </Routes>
     </BrowserRouter>
   );

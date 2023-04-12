@@ -6,14 +6,17 @@ function SelectModePage() {
   return (    
     <>
     <section className='select__mode'>
-      
+
         <p>Select Mode</p>
-        <NavLink to="/game" className='select__mode__single__player__mode__btn'>
-            <button>Single Player</button>
+
+        <NavLink to="/single_player_game" className='select__mode__sincle__player__mode__btn'>
+            <button>Single Player Mode</button>
         </NavLink>
-        {/* <NavLink to="/startbtn" className='select__mode__two__player__mode__btn'>
-            <button>Two Player</button>
-        </NavLink> */}
+    
+        <NavLink to="/two_player_game" className='select__mode__two__player__mode__btn'>
+            <button>Two Player Mode</button>
+        </NavLink>
+
 
         {/* <form action="">
             <label htmlFor="">Select Category</label>
