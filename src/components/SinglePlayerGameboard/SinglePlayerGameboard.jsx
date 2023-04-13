@@ -126,6 +126,7 @@ const gameOver = () => {
     setDisableCards(false);
     setCards(shuffleCards(cardsDetails.concat(cardsDetails)));
     setWinner("");
+    setViewWinner(false);
   };
   
   return (
