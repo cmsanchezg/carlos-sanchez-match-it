@@ -1,5 +1,5 @@
 import '../HomePage/HomePage.scss';
-import Logo from '../../assets/logo/match-it-logo.png';
+import Logo from '../../assets/logo/logo-1.jpg';
 import { NavLink } from 'react-router-dom';
 
 function HomePage() {
@@ -8,8 +8,8 @@ function HomePage() {
     <>
     <section className='home'>
         <img className='home__logo' src={Logo} alt="Match It! Logo" />
-        <NavLink to="/selectmode" className='home__start__btn'>
-            <button>start</button>
+        <NavLink to="/selectmode" className='home__start__link'>
+            <button className='home__start__btn'>start</button>
         </NavLink>
     </section>
     </>

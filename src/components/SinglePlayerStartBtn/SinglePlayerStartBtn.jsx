@@ -22,18 +22,19 @@ function SinglePlayerStartBtn() {
     <section className='single__player'>
         
         {viewForm ?
-        <div>
-            <label htmlFor="playerOneName">Enter Player One Name</label>
+        <div className='single__player__enter__name'>
+            <label className='single__player__label' htmlFor="playerOneName">Enter Player Name:</label>
             <input 
+              className='single__player__input'
               type="text" 
               name="playerOneName" 
               id="playerOneName" 
               value={playerOneName}
-              placeholder="Please Enter Your Name"
+              placeholder="Please Enter Player Name"
               onChange={handlePlayerOneName}/>
             
-            <div className='single__player__start__btn'>
-              <button onClick={handleStartBtn}>Start Game!</button>
+            <div className='single__player__start__link'>
+              <button className='single__player__start__btn' onClick={handleStartBtn}>Start Game!</button>
             </div>
         </div>
         : ""}
