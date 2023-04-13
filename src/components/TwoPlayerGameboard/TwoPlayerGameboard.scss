@@ -3,6 +3,18 @@
 
 .two__player__gameboard {
     padding: 1rem;
+    @include mobile-tablet {
+        padding: 1rem;
+    }
+    @include tablet {
+        padding: 1rem 2.5rem;
+    }
+    @include tablet-desktop {
+        padding: 1rem 4rem;
+    }
+    @include desktop {
+        padding: 1rem 7rem;
+    }
 
     &__section {
         border: 1px solid $background-color;
@@ -37,5 +49,78 @@
         border-radius: 5px;
         border: 3px solid $background-color;
         width: 50%;
+        @include mobile-tablet {
+            font-size: 32px;
+        }
+        @include tablet {
+            font-size: 36px;
+        }
+        @include tablet-desktop {
+            font-size: 42px;
+        }
+        @include desktop {
+            font-size: 48px;
+        }
+    }
+
+    &__pop__up {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 20px;
+        margin-left: 3rem;
+        margin-right: 3rem;
+        border: 1px solid $background-color;
+        padding: 1rem;
+        box-shadow: 0px 0px 5px 2px;
+        position: relative;
+        top: -328px;
+        @include mobile-tablet {
+            font-size: 26px;
+        }
+        @include tablet {
+            font-size: 30px;
+        }
+        @include tablet-desktop {
+            font-size: 36px;
+        }
+        @include desktop {
+            font-size: 42px;
+        }
+    }
+
+    &__home__link {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+        margin-top: 1rem;
+        text-decoration: none;
+        :hover {
+            cursor: pointer;
+            color: $text-color-secondary;
+            background-color: #1d1d1d;
+        }
+    }
+    
+    &__home__btn {
+        color: $text-color-primary;
+        font-size: 26px;
+        padding: .25rem;
+        border-radius: 5px;
+        border: 3px solid $background-color;
+        width: 50%;
+        @include mobile-tablet {
+            font-size: 32px;
+        }
+        @include tablet {
+            font-size: 36px;
+        }
+        @include tablet-desktop {
+            font-size: 42px;
+        }
+        @include desktop {
+            font-size: 48px;
+        }
     }
 }

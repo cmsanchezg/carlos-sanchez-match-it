@@ -181,12 +181,12 @@ const gameOver = () => {
         </div>
 
         {viewWinner ? 
-         <div>
-         <p>{winner}</p>
+         <div className="two__player__gameboard__pop__up">
+         <p className="two__player__gameboard__winner__name">{winner}</p>
          <div className="two__player__gameboard__restart__link">
             <button onClick={handleRestartBtn} className='two__player__gameboard__restart__btn'>Restart</button>
          </div>
-         <NavLink to={"/"}>
+         <NavLink className="two__player__gameboard__home__link" to={"/"}>
          <button className='two__player__gameboard__home__btn'>Home</button>
          </NavLink>
        </div>

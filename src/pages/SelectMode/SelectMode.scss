@@ -12,7 +12,19 @@
     
     &__title {
         color: $text-color-primary;
-        font-size: 20px;        
+        font-size: 20px; 
+        @include mobile-tablet {
+            font-size: 26px;
+        }
+        @include tablet {
+            font-size: 30px;
+        }
+        @include tablet-desktop {
+            font-size: 36px;
+        }
+        @include desktop {
+            font-size: 42px;
+        }       
     }
     
     &__link {
@@ -32,5 +44,17 @@
         border-radius: 5px;
         border: 3px solid $background-color;
         width: 100%;
+        @include mobile-tablet {
+            font-size: 32px;
+        }
+        @include tablet {
+            font-size: 36px;
+        }
+        @include tablet-desktop {
+            font-size: 42px;
+        }
+        @include desktop {
+            font-size: 48px;
+        }
     }
 }
