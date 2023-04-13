@@ -4,6 +4,7 @@ import SinglePlayerScoreboard from "../SinglePlayerScoreboard/SinglePlayerScoreb
 import { useEffect, useRef, useState } from "react";
 import axios from "axios";
 import { NavLink } from "react-router-dom";
+import Header from "../Header/Header";
 
 export const api = "http://localhost:0914";
 
@@ -128,11 +129,13 @@ const gameOver = () => {
   };
   
   return (
-    <section className="scoreboard">
+    <>
+      <section className="single__player__gameboard">
+      <Header/>
       
       <SinglePlayerScoreboard moves={moves} playerOneName={playerOneName} playerOnePairs={playerOnePairs} />
 
-      <div className="gameboard">
+      <div className="single__player__gameboard__section">
         {cards
         .map((card, index) => {
           return (
@@ -148,21 +151,23 @@ const gameOver = () => {
           );
         })}
         </div>
-        <div>
-          <button onClick={handleRestartBtn} className='gameboard__restart__btn'>Restart</button>
+        <div className="single__player__gameboard__restart__link">
+          <button onClick={handleRestartBtn} className='single__player__gameboard__restart__btn'>Restart</button>
         </div>
         
         {viewWinner ? 
          <div>
          <p>{winner}</p>
-         <button onClick={handleRestartBtn} className='gameboard__restart__btn'>Restart</button>
+          <div className="single__player__gameboard__restart__link">
+            <button onClick={handleRestartBtn} className='single__player__gameboard__restart__btn'>Restart</button>
+         </div>
          <NavLink to={"/"}>
-         <button className='gameboard__home__btn'>Home</button>
+            <button className='single__player__gameboard__home__btn'>Home</button>
          </NavLink>
        </div>
          : ""}
-
     </section>
+    </>
   );
 }
 

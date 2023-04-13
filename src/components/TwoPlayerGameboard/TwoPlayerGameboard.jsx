@@ -4,6 +4,7 @@ import TwoPlayerScoreboard from "../TwoPlayerScoreboard/TwoPlayerScoreboard";
 import { useEffect, useRef, useState } from "react";
 import axios from "axios";
 import { NavLink } from "react-router-dom";
+import Header from "../Header/Header";
 
 export const api = "http://localhost:0914";
 
@@ -153,11 +154,13 @@ const gameOver = () => {
   };
   
   return (
-    <section className="scoreboard">
+    <>
+    <section className="two__player__gameboard">
+    <Header/>
       
       <TwoPlayerScoreboard moves={moves} playerOneName={playerOneName} playerOnePairs={playerOnePairs} playerTwoName={playerTwoName} playerTwoPairs={playerTwoPairs} turn={turn}/>
 
-      <div className="gameboard">
+      <div className="two__player__gameboard__section">
         {cards
         .map((card, index) => {
           return (
@@ -173,21 +176,23 @@ const gameOver = () => {
           );
         })}
         </div>
-        <div>
-          <button onClick={handleRestartBtn} className='gameboard__restart__btn'>Restart</button>
+        <div className="two__player__gameboard__restart__link">
+          <button onClick={handleRestartBtn} className="two__player__gameboard__restart__btn">Restart</button>
         </div>
 
         {viewWinner ? 
          <div>
          <p>{winner}</p>
-         <button onClick={handleRestartBtn} className='gameboard__restart__btn'>Restart</button>
+         <div className="two__player__gameboard__restart__link">
+            <button onClick={handleRestartBtn} className='two__player__gameboard__restart__btn'>Restart</button>
+         </div>
          <NavLink to={"/"}>
-         <button className='gameboard__home__btn'>Home</button>
+         <button className='two__player__gameboard__home__btn'>Home</button>
          </NavLink>
        </div>
          : ""}
-
     </section>
+    </>
   );
 }
 

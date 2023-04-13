@@ -1,2 +1,18 @@
 @use '../../styles/partials/variables' as *;
 @use '../../styles/partials/mixins' as *;
+
+.scoreboard {
+    margin: 1rem 0rem;
+    color: $text-color-primary;
+
+    &__players {
+        font-size: 20px;
+        padding: .5rem 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 1px solid $background-color;
+        border-radius: 5px;
+        box-shadow: 0px 0px 5px 2px;        
+        }
+}

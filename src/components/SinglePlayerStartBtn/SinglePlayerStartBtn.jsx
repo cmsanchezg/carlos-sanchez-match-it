@@ -19,6 +19,7 @@ function SinglePlayerStartBtn() {
 
   return (    
     <>
+
     <section className='single__player'>
         
         {viewForm ?

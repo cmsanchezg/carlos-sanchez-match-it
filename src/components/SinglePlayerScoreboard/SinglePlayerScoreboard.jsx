@@ -4,13 +4,10 @@ function SinglePlayerScoreboard({moves, playerOneName, playerOnePairs}) {
 
     return (
         <section className='scoreboard'>
-        <div className='scoreboard__player'>
-            <p className='scoreboard__player__one'>{playerOneName}</p>
-            <p className='scoreboard__player__one'>Pairs: {playerOnePairs} </p>
-        </div>
-    
-        <div>
-            <p className='scoreboard__moves'>Moves: {moves} </p>
+        <div className='scoreboard__players'>
+            <p className='scoreboard__player__name'>{playerOneName}</p>
+            <p className='scoreboard__player__points'>Points: {playerOnePairs} </p>
+            <p className='scoreboard__total__moves'>Moves: {moves} </p>
         </div>
       
         </section>

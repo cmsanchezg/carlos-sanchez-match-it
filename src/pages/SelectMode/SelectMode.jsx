@@ -5,6 +5,7 @@ function SelectModePage() {
 
   return (    
     <>
+
     <section className='select__mode'>
 
         <p className='select__mode__title'>Select Mode:</p>
