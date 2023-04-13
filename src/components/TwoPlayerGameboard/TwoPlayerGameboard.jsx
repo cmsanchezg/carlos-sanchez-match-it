@@ -108,10 +108,10 @@ const gameOver = () => {
   const sum = (playerOnePairs + playerTwoPairs)
   if (sum === 7) {
     if (playerOnePairs > playerTwoPairs) {
-      setWinner(`${playerOneName} wins`)
+      setWinner(`${playerOneName} wins, better luck next time ${playerTwoName}`)
       setViewWinner(true)
     } if (playerOnePairs < playerTwoPairs) {
-      setWinner(`${playerTwoName} wins`)
+      setWinner(`${playerTwoName} wins, better luck next time ${playerOneName}`)
       setViewWinner(true)
     } else if (playerOnePairs === playerTwoPairs) {
       setWinner(`Tie Game`)
@@ -151,6 +151,7 @@ const gameOver = () => {
     setCards(shuffleCards(cardsDetails.concat(cardsDetails)));
     setTurn(`${playerOneName}'s turn`);
     setWinner("");
+    setViewWinner(false);
   };
   
   return (

@@ -1,6 +1,5 @@
-// import { useState } from 'react';
 import "./Card.scss";
-import fifa from '../../assets/images/images/soccer_back_cover.jpg';
+import Throne from '../../assets/images/images/throne_back_cover.jpg';
 import classnames from "classnames";
 
 function Card({ 
@@ -25,7 +24,7 @@ function Card({
       onClick={handleClick}>
 
           <div className="card__face card__face__font">
-            <img className="card__image" src={fifa} alt="fifa logo" />
+            <img className="card__image" src={Throne} alt="fifa logo" />
           </div>
           
           <div className="card__face card__face__back">

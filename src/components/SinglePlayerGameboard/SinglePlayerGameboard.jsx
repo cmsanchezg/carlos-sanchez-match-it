@@ -92,7 +92,7 @@ const handleCardClick = (index) => {
 
 const gameOver = () => {
     if (playerOnePairs === 7) {
-      setWinner(`${playerOneName} wins`)
+      setWinner(`${playerOneName}, you have an amazing memory!!`)
       setViewWinner(true)
     }
 };
