@@ -13,7 +13,7 @@
         padding: 1rem 4rem;
     }
     @include desktop {
-        padding: 1rem 7rem;
+    padding: 1rem 7rem;
     }
 
     &__section {
@@ -82,6 +82,7 @@
             font-size: 30px;
         }
         @include tablet-desktop {
+            top: -800px;
             font-size: 36px;
         }
         @include desktop {

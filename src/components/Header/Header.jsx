@@ -1,12 +1,13 @@
 import './Header.scss';
 import Logo from '../../assets/logo/logo-1.jpg';
+import { NavLink } from 'react-router-dom';
 
 function Header() {
 
     return (
-        <section className='header'>
+        <NavLink to={"/"} className='header'>
             <img className='header__image' src={Logo} alt="Match It! Logo" />           
-        </section>
+        </NavLink>
     );
 }
 

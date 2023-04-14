@@ -77,16 +77,17 @@
         position: relative;
         top: -328px;
         @include mobile-tablet {
-            top: -465px;
+            font-size: 26px;
         }
         @include tablet {
-            top: -500px;
+            font-size: 30px;
         }
         @include tablet-desktop {
-            top: -600px;
+            top: -800px;
+            font-size: 36px;
         }
         @include desktop {
-            top: -700px;
+            font-size: 42px;
         }
     }
 

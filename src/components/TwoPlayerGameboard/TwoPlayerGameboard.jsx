@@ -71,12 +71,15 @@ const match = () => {
     if (cards[first].id === cards[second].id) {
       setClearedCards ((prev) => ({...prev, [cards[first].id] : true }));
       if (currentPlayer === 2) {
-        setPlayerOnePairs((playerOnePairs) => playerOnePairs +1);  
-      } else if (currentPlayer === 1) {
-        setPlayerTwoPairs((playerTwoPairs) => playerTwoPairs +1);
+        setPlayerOnePairs(playerOnePairs +1);
+        setCurrentPlayer(1);  
+        setTurn(`${playerOneName}'s turn`);
+      } else {
+        setPlayerTwoPairs(playerTwoPairs +1);
+        setCurrentPlayer(2);
+        setTurn(`${playerTwoName}'s turn`);
       }
-      setOpenCards([])
-      gameOver();
+      setOpenCards([]);
       return;
     }
     timeout.current = setTimeout(() => {
@@ -104,22 +107,22 @@ const handleCardClick = (index) => {
     }
   };
 
-const gameOver = () => {
-  const sum = (playerOnePairs + playerTwoPairs)
-  if (sum === 7) {
-    if (playerOnePairs > playerTwoPairs) {
-      setWinner(`${playerOneName} wins, better luck next time ${playerTwoName}`)
-      setViewWinner(true)
-    } if (playerOnePairs < playerTwoPairs) {
-      setWinner(`${playerTwoName} wins, better luck next time ${playerOneName}`)
-      setViewWinner(true)
-    } else if (playerOnePairs === playerTwoPairs) {
-      setWinner(`Tie Game`)
-      setViewWinner(true)
-    }
-  }
-};
+  useEffect(() => {
+    const sum = (playerOnePairs + playerTwoPairs)
 
+    if (sum === 8) {
+      if(playerOnePairs === playerTwoPairs) {
+        setWinner(`Tie Game`)
+        setViewWinner(true)
+      } else if (playerOnePairs > playerTwoPairs) {
+        setWinner(`${playerOneName} wins, better luck next time ${playerTwoName}`)
+        setViewWinner(true)
+      } if (playerOnePairs < playerTwoPairs) {
+        setWinner(`${playerTwoName} wins, better luck next time ${playerOneName}`)
+        setViewWinner(true)
+      }
+    }
+  }, [playerOnePairs, playerTwoPairs])
 
   useEffect (() => {
     let timeout = null;
