@@ -17,7 +17,7 @@
     }
 
 
-    &__section {
+    &__board {
         border: 1px solid $background-color;
         padding: 1rem;
         box-shadow: 0px 0px 5px 2px;
@@ -75,18 +75,21 @@
         padding: 1rem;
         box-shadow: 0px 0px 5px 2px;
         position: relative;
-        top: -328px;
+        top: -400px;
         @include mobile-tablet {
+            top: -450px;
             font-size: 26px;
         }
         @include tablet {
+            top: -500px;
             font-size: 30px;
         }
         @include tablet-desktop {
-            top: -800px;
+            top: -550px;
             font-size: 36px;
         }
         @include desktop {
+            top: -550px;
             font-size: 42px;
         }
     }

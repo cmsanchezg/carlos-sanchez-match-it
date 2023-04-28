@@ -84,7 +84,7 @@ const match = () => {
     }
     timeout.current = setTimeout(() => {
       setOpenCards([]);
-    }, 500);
+    }, 200);
   };
 
 const handleCardClick = (index) => {  
@@ -164,7 +164,7 @@ const handleCardClick = (index) => {
       
       <TwoPlayerScoreboard moves={moves} playerOneName={playerOneName} playerOnePairs={playerOnePairs} playerTwoName={playerTwoName} playerTwoPairs={playerTwoPairs} turn={turn}/>
 
-      <div className="two__player__gameboard__section">
+      <div className="two__player__gameboard__board">
         {cards
         .map((card, index) => {
           return (

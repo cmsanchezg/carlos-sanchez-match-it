@@ -136,7 +136,7 @@ const gameOver = () => {
       
       <SinglePlayerScoreboard moves={moves} playerOneName={playerOneName} playerOnePairs={playerOnePairs} />
 
-      <div className="single__player__gameboard__section">
+      <div className="single__player__gameboard__board">
         {cards
         .map((card, index) => {
           return (
