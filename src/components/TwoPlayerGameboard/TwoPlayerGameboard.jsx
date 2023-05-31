@@ -84,7 +84,7 @@ const match = () => {
     }
     timeout.current = setTimeout(() => {
       setOpenCards([]);
-    }, 200);
+    }, 100);
   };
 
 const handleCardClick = (index) => {  

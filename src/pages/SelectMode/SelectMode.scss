@@ -9,6 +9,16 @@
     justify-content: center;
     gap: .5rem;
     height: 100vh;
+
+    &__categories {
+        color: $text-color-primary;
+        font-size: 20px; 
+    }
+
+    &__dropdown {
+        color: $text-color-primary;
+        font-size: 26px; 
+    }
     
     &__title {
         color: $text-color-primary;

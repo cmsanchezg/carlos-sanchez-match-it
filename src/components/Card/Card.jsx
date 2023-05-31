@@ -1,5 +1,5 @@
 import "./Card.scss";
-import Throne from '../../assets/images/images/throne_back_cover.jpg';
+import Throne from '../../assets/images/card_back_covers/throne_back_cover.jpg';
 import classnames from "classnames";
 
 function Card({ 
