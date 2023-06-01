@@ -31,26 +31,25 @@ function SelectModePage() {
     <section className='select__mode'>
 
       <div className='select__mode__categories'>
-        <form action="">
-          <label htmlFor="categories">Select Theme: </label>
-          <select
-            className='select__mode__dropdown'  
-            onChange={(e) => setOptions(e.target.value)} >
-            {categories
-            .map((categories) => {
-              return (
-              <option key={categories.id}>
-                {categories.category}
-              </option> 
-              )
-            })
-            } 
-          </select>
-        </form>
+        <label className='select__mode__labels' htmlFor="categories">Select Theme: </label>
+        <select
+          className='select__mode__dropdown'
+          name='categories'
+          id='categories'
+          onChange={(e) => setOptions(e.target.value)}>
+          {categories
+          .map((categories) => {
+            return (
+            <option key={categories.id}>
+              {categories.category}              </option> 
+            )
+          })
+          } 
+        </select>
       </div>
 
-      <div>
-        <p className='select__mode__title'>Select Mode:</p>
+      <div className='select__mode__number__players'>
+        <p className='select__mode__labels'>Select Mode:</p>
 
         <NavLink to="/single_player_game" className='select__mode__link'>
           <button className='select__mode__btn'>Single Player Mode</button>
