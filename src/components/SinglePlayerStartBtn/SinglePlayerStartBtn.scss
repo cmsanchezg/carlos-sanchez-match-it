@@ -3,6 +3,24 @@
 
 .single__player {
     color: $text-color-primary;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    height: 100vh;
+
+    &__categories {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__dropdown {
+        color: $text-color-primary;
+        font-size: 26px; 
+    }
     
     &__enter__name {
         font-size: 20px;
@@ -10,14 +28,13 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
-        gap: .5rem;
-        height: 100vh;        
+        justify-content: center;        
     }
 
     &__label {
         color: $text-color-primary;
         font-size: 20px;
+        margin-bottom: .5rem;
         @include mobile-tablet {
             font-size: 26px;
         }
@@ -39,6 +56,7 @@
         background-color: white;    
         border:2px solid gray;
         width: 75%;
+        margin-bottom: .5rem;
         @include mobile-tablet {
             font-size: 22px;
         }
@@ -55,7 +73,7 @@
     
     &__start__link {
         text-align: center;
-        width: 50%;
+        width: 100%;
         :hover {
             cursor: pointer;
             color: $text-color-secondary;

@@ -1,5 +1,4 @@
 import "./Card.scss";
-import Throne from '../../assets/images/card_back_covers/throne_back_cover.jpg';
 import classnames from "classnames";
 
 function Card({ 
@@ -24,11 +23,11 @@ function Card({
       onClick={handleClick}>
 
           <div className="card__face card__face__font">
-            <img className="card__image" src={Throne} alt="fifa logo" />
+            <img className="card__image" src={card.cover} alt="Theme Cover" />
           </div>
           
           <div className="card__face card__face__back">
-            <img className="card__image" src={card.image} alt={card.description} />
+            <img className="card__image" src={card.image} alt={card.description}/>
           </div>
 
       </div>
@@ -37,15 +36,3 @@ function Card({
 }
 
 export default Card;
-
-      // <div className="card" onClick={()=> handleCardClick(id)}>
-      //   {flipped ? (
-      //     <div className="card__front">
-      //       <img className="card__front--image" src={image} alt={description} />
-      //     </div>
-      //   ) : (
-      //     <div className="card__back">
-      //       <img className="card__back--image" src={cover} alt="fifa logo" />
-      //     </div>
-      //   )}
-      // </div>

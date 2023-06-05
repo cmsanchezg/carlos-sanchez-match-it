@@ -19,7 +19,7 @@ function shuffleCards(array) {
   return array;
 }
 
-function SinglePlayerGameboard({playerOneName}) {
+function SinglePlayerGameboard({playerOneName, selected}) {
 
   const [cardsDetails, setCardsDetails] = useState([]); 
   const [openCards, setOpenCards] = useState([]);
@@ -32,6 +32,7 @@ function SinglePlayerGameboard({playerOneName}) {
   const [currentPlayer, setCurrentPlayer] = useState(1);
   const [winner, setWinner] = useState("");
   const [viewWinner, setViewWinner] = useState(false);
+
   
 useEffect(() => {
   getCards();
@@ -43,9 +44,12 @@ useEffect(() => {
 
 function getCards () {
   axios
-  .get (`${api}/images`)
+  .get (`${api}/categories/${selected}`)
   .then((res) => {
-      setCardsDetails(res.data);
+      const category = res.data.images;
+      console.log(res.data.images)
+      setCardsDetails(res.data.images);
+    
   })
   .catch((error) => {
       console.log("error", error);

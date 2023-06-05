@@ -26,17 +26,6 @@
             font-size: 42px;
         }       
     }
-
-    &__categories {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    &__dropdown {
-        color: $text-color-primary;
-        font-size: 26px; 
-    }
     
     &__number__players {
         display: flex;
