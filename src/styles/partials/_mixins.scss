@@ -3,11 +3,13 @@
 @mixin tablet {
     @media (min-width: $tablet-width) {
       @content;
+      font-size: 46px;
     }
   }
 
   @mixin desktop {
     @media (min-width: $desktop-width) {
       @content;
+      font-size: 60px;
     }
   }

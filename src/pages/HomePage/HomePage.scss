@@ -27,16 +27,12 @@
     
     &__start__btn {
         color: $text-color-primary;
-        font-size: 26px;
+        font-size: 36px;
         padding: .25rem;
         border-radius: 5px;
         border: 3px solid $background-color;
         width: 100%;
-        @include tablet {
-            font-size: 36px;
-        }
-        @include desktop {
-            font-size: 48px;
-        }
+        @include tablet; 
+        @include desktop;
     }
 }
