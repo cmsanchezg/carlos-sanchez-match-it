@@ -1,19 +1,7 @@
 @use '../partials/variables' as *;
 
-@mixin mobile-tablet {
-  @media (min-width: $mobile-tablet-width) {
-    @content;
-  }
-}
-
 @mixin tablet {
     @media (min-width: $tablet-width) {
-      @content;
-    }
-  }
-  
-  @mixin tablet-desktop {
-    @media (min-width: $tablet-desktop-width) {
       @content;
     }
   }

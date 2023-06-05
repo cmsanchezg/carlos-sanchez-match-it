@@ -12,15 +12,9 @@
 
     &__labels {
         color: $text-color-primary;
-        font-size: 20px; 
-        @include mobile-tablet {
-            font-size: 26px;
-        }
+        font-size: 20px;
         @include tablet {
             font-size: 30px;
-        }
-        @include tablet-desktop {
-            font-size: 36px;
         }
         @include desktop {
             font-size: 42px;
@@ -51,14 +45,8 @@
         border: 3px solid $background-color;
         width: 100%;
         margin: .25rem 0rem;
-        @include mobile-tablet {
-            font-size: 32px;
-        }
         @include tablet {
             font-size: 36px;
-        }
-        @include tablet-desktop {
-            font-size: 42px;
         }
         @include desktop {
             font-size: 48px;

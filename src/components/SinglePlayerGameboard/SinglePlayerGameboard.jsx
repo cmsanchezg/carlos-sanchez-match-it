@@ -46,8 +46,6 @@ function getCards () {
   axios
   .get (`${api}/categories/${selected}`)
   .then((res) => {
-      const category = res.data.images;
-      console.log(res.data.images)
       setCardsDetails(res.data.images);
     
   })

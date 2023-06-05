@@ -10,14 +10,8 @@
     transform-style: preserve-3d;
     position: relative;
     cursor: pointer;
-    @include mobile-tablet {
-        height: 12vh;
-    }
     @include tablet {
         height: 14vh;
-    }
-    @include tablet-desktop {
-        height: 16vh;
     }
     @include desktop {
         height: 18vh;
