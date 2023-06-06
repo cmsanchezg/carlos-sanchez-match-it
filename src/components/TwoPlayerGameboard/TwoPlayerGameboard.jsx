@@ -19,7 +19,7 @@ function shuffleCards(array) {
   return array;
 }
 
-function TwoPlayerGameboard({playerOneName, playerTwoName}) {
+function TwoPlayerGameboard({playerOneName, playerTwoName, selected}) {
 
   const [cardsDetails, setCardsDetails] = useState([]); 
   const [openCards, setOpenCards] = useState([]);
@@ -47,9 +47,9 @@ useEffect(() => {
 
 function getCards () {
   axios
-  .get (`${api}/images`)
+  .get (`${api}/categories/${selected}`)
   .then((res) => {
-      setCardsDetails(res.data);
+      setCardsDetails(res.data.images);
   })
   .catch((error) => {
       console.log("error", error);
