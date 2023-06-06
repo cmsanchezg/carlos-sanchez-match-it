@@ -91,13 +91,13 @@ const handleCardClick = (index) => {
     if (openCards.length === 1 && currentPlayer === 2) {
       setOpenCards ((prev) => [...prev, index]);
       setMoves((moves) => moves + 1);
-      setTurn(`${playerOneName}'s turn`);
+      setTurn(`${playerOneName}'s`);
       setCurrentPlayer(1);
       disable();
     } else if (openCards.length === 1 && currentPlayer === 1) {
       setOpenCards ((prev) => [...prev, index]);
       setMoves((moves) => moves + 1);
-      setTurn(`${playerTwoName}'s turn`);
+      setTurn(`${playerTwoName}'s`);
       setCurrentPlayer(2);
       disable();
     } 
