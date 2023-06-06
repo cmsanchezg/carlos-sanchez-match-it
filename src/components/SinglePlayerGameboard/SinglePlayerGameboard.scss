@@ -12,13 +12,23 @@
 
     &__board {
         border: 1px solid $background-color;
-        padding: .75rem;
+        padding: .5rem;
         box-shadow: 0px 0px 5px 2px;
         display: grid;
         grid-template-columns: repeat(4,1fr);
         gap: .75rem;
-        width: 100%;
-        height: auto;
+        width: 280px;
+        height: 280px;
+        margin-left: auto;
+        margin-right: auto;
+        @include tablet {
+            width: 656px;
+            height: 656px;
+        }
+        @include desktop {
+            width: 1024px;
+            height: 1024px;
+        }
     }
 
     &__restart__link {
@@ -53,7 +63,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        font-size: 20px;
+        font-size: 36px;
         margin-left: 3rem;
         margin-right: 3rem;
         border: 1px solid $background-color;
@@ -63,11 +73,11 @@
         top: -400px;
         @include tablet {
             top: -500px;
-            font-size: 30px;
+            font-size: 46px;
         }
         @include desktop {
             top: -550px;
-            font-size: 42px;
+            font-size: 60px;
         }
     }
 
