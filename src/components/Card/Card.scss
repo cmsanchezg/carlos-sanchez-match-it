@@ -12,6 +12,7 @@
     &__image {
         width: 100%;
         height: 100%;
+        border-radius: 5px;
     }
     
     &__face {
@@ -19,6 +20,7 @@
         position: absolute;
         width: 100%;
         height: 100%;
+        border-radius: 5px;
         &__back {
             transform: rotateY(180deg);
         }
