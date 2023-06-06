@@ -19,11 +19,18 @@
 
     &__dropdown {
         color: $text-color-primary;
-        font-size: 26px; 
+        font-size: 26px;
+        background-color: white;
+        @include tablet {
+            font-size: 36px;
+        } 
+        @include desktop {
+            font-size: 50px;
+        }
     }
     
     &__enter__name {
-        font-size: 20px;
+        font-size: 26px;
         padding: 1rem;
         display: flex;
         flex-direction: column;
@@ -33,18 +40,18 @@
 
     &__label {
         color: $text-color-primary;
-        font-size: 20px;
+        font-size: 26px;
         margin-bottom: .5rem;
         @include tablet {
-            font-size: 30px;
+            font-size: 36px;
         }
         @include desktop {
-            font-size: 42px;
+            font-size: 50px;
         }        
     }
 
     &__input {
-        font-size: 16px;
+        font-size: 20px;
         padding: 7px;
         border-radius: 5px;   
         background-color: white;    
@@ -52,10 +59,10 @@
         width: 75%;
         margin-bottom: .5rem;
         @include tablet {
-            font-size: 26px;
+            font-size: 30px;
         }
         @include desktop {
-            font-size: 38px;
+            font-size: 40px;
         } 
     }
     
@@ -71,16 +78,16 @@
     
     &__start__btn {
         color: $text-color-primary;
-        font-size: 26px;
+        font-size: 36px;
         padding: .25rem;
         border-radius: 5px;
         border: 3px solid $background-color;
         width: 100%;
         @include tablet {
-            font-size: 36px;
+            font-size: 46px;
         }
         @include desktop {
-            font-size: 48px;
+            font-size: 60px;
         }
     }
 }
