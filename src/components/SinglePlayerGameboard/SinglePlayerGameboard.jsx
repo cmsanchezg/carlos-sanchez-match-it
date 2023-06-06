@@ -71,8 +71,7 @@ const match = () => {
       if (currentPlayer === 1) {
         setPlayerOnePairs((playerOnePairs) => playerOnePairs +1);  
       }
-      setOpenCards([])
-      gameOver();
+      setOpenCards([]);
       return;
     }
     timeout.current = setTimeout(() => {
@@ -92,13 +91,13 @@ const handleCardClick = (index) => {
     }
   };
 
-const gameOver = () => {
-    if (playerOnePairs === 7) {
+  useEffect(() => {
+
+    if (playerOnePairs === 8) {
       setWinner(`${playerOneName}, you have an amazing memory!!`)
       setViewWinner(true)
     }
-};
-
+  })
 
   useEffect (() => {
     let timeout = null;

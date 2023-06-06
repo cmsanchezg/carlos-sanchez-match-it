@@ -10,12 +10,12 @@
     transform-style: preserve-3d;
     position: relative;
     cursor: pointer;
-    @include tablet {
-        height: 14vh;
-    }
-    @include desktop {
-        height: 18vh;
-    }
+    // @include tablet {
+    //     height: 14vh;
+    // }
+    // @include desktop {
+    //     height: 18vh;
+    // }
 
     &__image {
         width: 100%;
